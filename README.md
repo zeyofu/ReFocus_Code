@@ -7,6 +7,7 @@ This repo contains codes for the paper "ReFocus: Visual Editing as a Chain of Th
 
 ## 🔔News
 
+ **🎉[2025-05-01]: ReFocus is accepted to [ICML2025](https://icml.cc/)!.**
  **🔥[2025-01-12]: Releasing the codes for ReFocus and collected [training data]() and [finetuned model](https://huggingface.co/Fiaa/ReFocus).**
 
 # Introduction
