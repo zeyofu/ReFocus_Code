@@ -41,17 +41,17 @@ Set up your openAI key which is required to run ReFocus with GPT-4 models.
 export OPENAI_API_KEY=<your_key>
 ```
 
-Run code for each task.
+Run code for each task to prompt with ReFocus.
 ```
 python src/main_chartQA.py
 python src/main_tablevqa.py
 python src/main_charxiv.py
 ```
 
-# ReFocus Finetuning
+## ReFocus Finetuning
 We follow the [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook/blob/main/md/04.Fine-tuning/FineTuning_Vision.md) for the supervised finetuning experiments. 
 
-## Download the Finetuned Model
+### Download the Finetuned Model
 We release our best finetuned ReFocus model with full chain-of-thought data in this [HuggingFace Link](https://huggingface.co/Fiaa/ReFocus).
 
 This model is finetuned based on Phi-3.5-vision, and we used the following prompt during evaluation
@@ -63,7 +63,7 @@ To enforce the model to generate bounding box coordinates to refocus, you could 
 <|image_1|>\n{question}\nThought: The areas to focus on in the image have bounding box coordinates:
 ```
 
-## Finetune Quickstart
+### Finetune Quickstart
 Follow the [Phi3CookBook](https://github.com/microsoft/Phi-3CookBook/blob/main/md/04.Fine-tuning/FineTuning_Vision.md), clone it, and following its setting for a new finetuning environment. 
 
 ```
@@ -96,6 +96,13 @@ Then you could train the model
 cd Phi-3CookBook/code/04.Finetuning/vision_finetuning
 
 python -m torch.distributed.run --nproc_per_node=8 finetune_hf_trainer_chartqa_vcot.py --full_train --data_dir data/chartqa_vcot --bf16 --use_flash_attention --batch_size 48 --output_dir outputs/chartqa_vcot_loop --learning_rate 1e-6 --num_train_epochs 2 --output_bbox 1
+```
+
+## Coordinate Acquisition
+In case you are interested, we share the code we used to acquire the table and chart coordinates in ReFocus. 
+```
+python helper/get_coordinates_for_chart.py
+python helper/get_coordinates_for_table.py
 ```
 
 ## Download Training Data
