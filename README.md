@@ -2,18 +2,23 @@
 
 This repo contains codes for the paper "ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding"
 
-[**🌐 Homepage**](https://zeyofu.github.io/ReFocus/) |[**📑 Paper**](https://arxiv.org/abs/2501.05452) |  [**📊 Training Data**](#download-training-data) | [**🔗 Trained Model**](#download-the-finetuned-model)
+[**🌐 Homepage**](https://zeyofu.github.io/ReFocus/) |[**📑 Paper**](https://arxiv.org/abs/2501.05452) |  [**🤗 Training Data**](https://huggingface.co/datasets/ReFocus/ReFocus_Data) | [**🔗 Trained Model**](#download-the-finetuned-model)
 
 
 ## 🔔News
 
  **🎉[2025-05-01]: ReFocus is accepted to [ICML2025](https://icml.cc/)! See you in Canada.**
  
- **🔥[2025-01-12]: Releasing the codes for ReFocus and collected [training data]() and [finetuned model](https://huggingface.co/Fiaa/ReFocus).**
+ **🔥[2025-01-12]: Releasing the codes for ReFocus and collected [training data](https://huggingface.co/datasets/ReFocus/ReFocus_Data) and [finetuned model](https://huggingface.co/Fiaa/ReFocus).**
 
 # Introduction
 
 ![Alt text](assets/teaser.png)
+
+## Download Training Data
+14k collected training data is uploaded on [Huggingface](https://huggingface.co/datasets/ReFocus/ReFocus_Data).
+Complete raw data can be found in the [Google Drive Link](https://drive.google.com/drive/folders/1Ic2BmpbGQ1pcZ6KabjmP9YxefKDq3TrN?usp=sharing), where the training data is under `chartqa_vcot.zip` and `train_chartQA_*.zip`, with other files being testing data.
+
 
 # ReFocus Prompting
 We inherit most of the prompting code following [Visual SketchPad](https://visualsketchpad.github.io/)
@@ -29,10 +34,10 @@ pip install Pillow joblib matplotlib opencv-python numpy networkx scipy datasets
 ```
 
 ## Quick Start
-### Data
-We preprocessed each task and put them into tasks. We put everything in `data` folder and upload to this [Google Drive Link](https://drive.google.com/drive/folders/1Ic2BmpbGQ1pcZ6KabjmP9YxefKDq3TrN?usp=sharing). Please download and unzip.
+### Task Data
+We preprocessed each task and put them into tasks. Download from this [Google Drive Link](https://drive.google.com/drive/folders/1Ic2BmpbGQ1pcZ6KabjmP9YxefKDq3TrN?usp=sharing) and put everything under `data`.
 
-* Notice that the finetuning data is downloaded at the same time.
+* Notice that the finetuning data is under `chartqa_vcot.zip` and `train_chartQA_*.zip`, with the rest being testing data.
 
 ### Run a Task
 Set up your openAI key which is required to run ReFocus with GPT-4 models.
@@ -105,5 +110,3 @@ python helper/get_coordinates_for_chart.py
 python helper/get_coordinates_for_table.py
 ```
 
-## Download Training Data
-The data can be download from [Google Drive Link](https://drive.google.com/drive/folders/1Ic2BmpbGQ1pcZ6KabjmP9YxefKDq3TrN?usp=sharing). Training data is under `chartqa_vcot`.
