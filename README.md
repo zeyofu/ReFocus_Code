@@ -1,8 +1,8 @@
 # <img src="assets/icon.png" width="35" /> ReFocus
 
-This repo contains codes for the paper "ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding"
+This repo contains codes for the paper "ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding" accepted at ICML 2025. 
 
-[**🌐 Homepage**](https://zeyofu.github.io/ReFocus/) |[**📑 Paper**](https://arxiv.org/abs/2501.05452) |  [**🤗 Training Data**](https://huggingface.co/datasets/ReFocus/ReFocus_Data) | [**🔗 Trained Model**](#download-the-finetuned-model)
+[**🌐 Homepage**](https://zeyofu.github.io/ReFocus/) |[**📑 Paper**](https://arxiv.org/abs/2501.05452) |  [**🤗 Training Data**](https://huggingface.co/datasets/ReFocus/ReFocus_Data) | [**🔗 Trained Model**](https://huggingface.co/ReFocus/Trained_Model)
 
 
 ## 🔔News
@@ -17,7 +17,7 @@ This repo contains codes for the paper "ReFocus: Visual Editing as a Chain of Th
 
 ## Download Training Data
 14k collected training data is uploaded on [Huggingface](https://huggingface.co/datasets/ReFocus/ReFocus_Data).
-Complete raw data can be found in the [Google Drive Link](https://drive.google.com/drive/folders/1Ic2BmpbGQ1pcZ6KabjmP9YxefKDq3TrN?usp=sharing), where the training data is under `chartqa_vcot.zip` and `train_chartQA_*.zip`, with other files being testing data.
+Complete raw data can be found in the [Huggingface Dataset Files](https://huggingface.co/datasets/ReFocus/ReFocus_Data/tree/main), where the training data is under `chartqa_vcot.zip` and `train_chartQA_*.zip`, with other files being testing data.
 
 
 # ReFocus Prompting
@@ -35,7 +35,7 @@ pip install Pillow joblib matplotlib opencv-python numpy networkx scipy datasets
 
 ## Quick Start
 ### Task Data
-We preprocessed each task and put them into tasks. Download from this [Google Drive Link](https://drive.google.com/drive/folders/1Ic2BmpbGQ1pcZ6KabjmP9YxefKDq3TrN?usp=sharing) and put everything under `data`.
+We preprocessed each task and put them into tasks. Download from this [Huggingface Dataset Files](https://huggingface.co/datasets/ReFocus/ReFocus_Data/tree/main) and put everything under `data`.
 
 * Notice that the finetuning data is under `chartqa_vcot.zip` and `train_chartQA_*.zip`, with the rest being testing data.
 
@@ -57,7 +57,7 @@ python src/main_charxiv.py
 We follow the [Phi-3 Cookbook](https://github.com/microsoft/Phi-3CookBook/blob/main/md/04.Fine-tuning/FineTuning_Vision.md) for the supervised finetuning experiments. 
 
 ### Download the Finetuned Model
-We release our best finetuned ReFocus model with full chain-of-thought data in this [HuggingFace Link](https://huggingface.co/Fiaa/ReFocus).
+We release our best finetuned ReFocus model with full chain-of-thought data in this [HuggingFace Link](https://huggingface.co/ReFocus/Trained_Model).
 
 This model is finetuned based on Phi-3.5-vision, and we used the following prompt during evaluation
 ```
