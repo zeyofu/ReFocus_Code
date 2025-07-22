@@ -28,8 +28,8 @@ We inherit most of the prompting code following [Visual SketchPad](https://visua
 conda create -n refocus python=3.11
 conda activate refocus
 
-pip install ag2==0.3.0
-pip install 'ag2[jupyter-executor]'
+pip install pyautogen==0.3.0
+pip install 'pyautogen[jupyter-executor]'
 pip install Pillow joblib matplotlib opencv-python numpy networkx scipy datasets
 ```
 
